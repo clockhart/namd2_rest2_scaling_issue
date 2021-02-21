@@ -35,7 +35,7 @@ When running this test, NAMD 2.14 shows that bonded, dihedral, and electrostatic
 energy terms have U_{scaled} / U_{unscaled} = beta = 0.5 as expected. However,
 this is untrue for angle and van der Waals terms. These observed betas are:  
 beta_{obs, angle} = 0.76404  # for the asparagine system  
-beta_{obs, vdw} = 0.424655  # for the sodium-chlordie system
+beta_{obs, vdw} = 0.424655  # for the sodium-chloride system
 
 The proposed fix brings beta_{obs, angle} = beta_{obs, vdw} = beta = 0.5 as
 expected.
