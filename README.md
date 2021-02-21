@@ -23,8 +23,8 @@ To demonstrate this issue, I propose two cases. First, asparagine features an
 Urey-Bradley term. Second, a simple system of one sodium and one chloride ion
 can be used to test NBFIX. For simplicity, both systems are studied in vacuo.
 
-In the NAMD user guide and elsewhere in literature, the scaled energy U is, U =
-beta * U_{1} + sqrt(beta) * U_{01} + U_{0}
+In the NAMD user guide and elsewhere in literature, the scaled energy U is,  
+U = beta * U_{1} + sqrt(beta) * U_{01} + U_{0}
 
 The test sets beta = 0.5 with all atoms participating in REST2 scaling, i.e., U
 = beta * U_{1}, with bonded and angle scaling turned on. Therefore, we would
@@ -33,8 +33,8 @@ the scaled energy.
 
 When running this test, NAMD 2.14 shows that bonded, dihedral, and electrostatic
 energy terms have U_{scaled} / U_{unscaled} = beta = 0.5 as expected. However,
-this is untrue for angle and van der Waals terms. These observed betas are:
-beta_{obs, angle} = 0.76404  # for the asparagine system 
+this is untrue for angle and van der Waals terms. These observed betas are:  
+beta_{obs, angle} = 0.76404  # for the asparagine system  
 beta_{obs, vdw} = 0.424655  # for the sodium-chlordie system
 
 The proposed fix brings beta_{obs, angle} = beta_{obs, vdw} = beta = 0.5 as
