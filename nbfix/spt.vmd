@@ -1,0 +1,10 @@
+
+mol new ions.psf waitfor all
+mol addfile ions.pdb waitfor all
+
+set all [atomselect top "all"]
+$all set beta 1.
+
+$all writepdb "spt.pdb"
+
+exit

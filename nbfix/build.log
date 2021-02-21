@@ -1,0 +1,63 @@
+Info) VMD for LINUXAMD64, version 1.9.3 (December 1, 2016)
+Info) http://www.ks.uiuc.edu/Research/vmd/                         
+Info) Email questions and bug reports to vmd@ks.uiuc.edu           
+Info) Please include this reference in published work using VMD:   
+Info)    Humphrey, W., Dalke, A. and Schulten, K., `VMD - Visual   
+Info)    Molecular Dynamics', J. Molec. Graphics 1996, 14.1, 33-38.
+Info) -------------------------------------------------------------
+Info) Multithreading available, 8 CPUs detected.
+Info) Free system memory: 8GB (49%)
+Info) Dynamically loaded 2 plugins in directory:
+Info) /usr/local/lib/vmd/plugins/LINUXAMD64/molfile
+1.6.4
+psfgen) reading topology file toppar_water_ions.str
+
+psfgen)  Toplogy and parameter information for water and ions.
+psfgen) 
+psfgen) reading topology from stream file
+psfgen)  Topology for water and ions
+psfgen) 
+psfgen) Created by CHARMM version 31 1
+psfgen) skipping parameters in stream file
+psfgen)  Parameters for water and ions
+psfgen) 
+psfgen) building segment SOD
+psfgen) reading residues from pdb file _sod.pdb
+psfgen) extracted 1 residues from pdb file
+psfgen) Info: generating structure...segment complete.
+psfgen) reading coordinates from pdb file _sod.pdb for segment SOD
+psfgen) building segment CLA
+psfgen) reading residues from pdb file _cla.pdb
+psfgen) extracted 1 residues from pdb file
+psfgen) Info: generating structure...psfgen) unknown atom type CLA
+psfgen) add atom failed in residue CLA:1
+failed!
+ERROR: failed on end of segment
+MOLECULE DESTROYED BY FATAL ERROR!  Use resetpsf to start over.
+
+MOLECULE MISSING!  Use resetpsf to start over.
+
+MOLECULE MISSING!  Use resetpsf to start over.
+
+MOLECULE MISSING!  Use resetpsf to start over.
+Info) Using plugin psf for structure file ions.psf
+psfplugin) WARNING: no bonds defined in PSF file.
+psfplugin) WARNING: no angles defined in PSF file.
+psfplugin) WARNING: no dihedrals defined in PSF file.
+psfplugin) WARNING: no impropers defined in PSF file.
+psfplugin) no cross-terms defined in PSF file.
+Info) Analyzing structure ...
+Info)    Atoms: 2
+Info)    Bonds: 0
+Info)    Angles: 0  Dihedrals: 0  Impropers: 0  Cross-terms: 0
+Info)    Bondtypes: 0  Angletypes: 0  Dihedraltypes: 0  Impropertypes: 0
+Info)    Residues: 2
+Info)    Waters: 0
+Info)    Segments: 2
+Info)    Fragments: 2   Protein: 0   Nucleic: 0
+Info) Using plugin pdb for coordinates from file ions.pdb
+Info) Finished with coordinate file ions.pdb.
+0
+Info) VMD for LINUXAMD64, version 1.9.3 (December 1, 2016)
+Info) Exiting normally.
+vmd > 

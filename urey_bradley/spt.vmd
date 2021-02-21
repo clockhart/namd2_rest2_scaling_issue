@@ -1,0 +1,10 @@
+
+mol new asn.psf waitfor all
+mol addfile asn.pdb waitfor all
+
+set all [atomselect top "all"]
+$all set beta 1.
+
+$all writepdb "spt.pdb"
+
+exit

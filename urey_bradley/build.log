@@ -1,0 +1,87 @@
+Info) VMD for LINUXAMD64, version 1.9.3 (December 1, 2016)
+Info) http://www.ks.uiuc.edu/Research/vmd/                         
+Info) Email questions and bug reports to vmd@ks.uiuc.edu           
+Info) Please include this reference in published work using VMD:   
+Info)    Humphrey, W., Dalke, A. and Schulten, K., `VMD - Visual   
+Info)    Molecular Dynamics', J. Molec. Graphics 1996, 14.1, 33-38.
+Info) -------------------------------------------------------------
+Info) Multithreading available, 8 CPUs detected.
+Info) Free system memory: 7576MB (46%)
+Info) Dynamically loaded 2 plugins in directory:
+Info) /usr/local/lib/vmd/plugins/LINUXAMD64/molfile
+1.6.4
+psfgen) reading topology file top_all36_prot.rtf
+
+psfgen) >>>>>>>>CHARMM36 All-Hydrogen Topology File for Proteins <<<<<<
+psfgen) >>>>> Includes phi, psi cross term map (CMAP) correction <<<<<<<
+psfgen) >>>>>>>>>>>>>>>>>>>>>>>>>> May 2011 <<<<<<<<<<<<<<<<<<<<<<<<<<<<
+psfgen)  All comments to the CHARMM web site: www.charmm.org
+psfgen)              parameter set discussion forum
+psfgen) 
+psfgen) Created by CHARMM version 36 1
+psfgen) ERROR!  Failed to parse autogenerate statement.  Line 92: AUTO ANGLES DIHE PATCH
+
+psfgen) cross-term entries present in topology definitions
+psfgen) building segment ASN
+psfgen) setting patch for first residue to ACE
+psfgen) setting patch for last residue to CT2
+psfgen) reading residues from pdb file _asn.pdb
+psfgen) extracted 1 residues from pdb file
+psfgen) Info: generating structure...psfgen) Info: skipping bond C-N at beginning of segment.
+psfgen) Info: skipping improper C-CA-N-O at beginning of segment.
+psfgen) Info: skipping improper N-C-CA-HN at beginning of segment.
+psfgen) Info: skipping cross-term C-N-CA-C-N-CA-C-N at beginning of segment.
+psfgen) Info: skipping conformation CA-C-N-CA at beginning of segment.
+psfgen) Info: skipping conformation N-CA-C-O at beginning of segment.
+psfgen) Info: skipping conformation N-CA-C-N at beginning of segment.
+psfgen) Info: skipping conformation C-N-CA-C at beginning of segment.
+psfgen) Info: skipping conformation C-CA-N-HN at beginning of segment.
+psfgen) no residue 1 past ASN:1 of segment ASN
+psfgen) Warning: add cross-term failed in patch ACE
+segment complete.
+psfgen) reading coordinates from pdb file _asn.pdb for segment ASN
+psfgen) Warning: failed to set coordinate for atom H	 ASN:1	  ASN
+psfgen) Warning: failed to set coordinate for atom OXT	 ASN:1	  ASN
+psfgen) Warning: failed to set coordinate for atom HO	 ASN:1	  ASN
+psfgen) Info: guessing coordinates for 9 atoms (4 non-hydrogen)
+psfgen) Warning: poorly guessed coordinates for 9 atoms (4 non-hydrogen):
+psfgen) Warning: poorly guessed coordinate for atom CAY	 ASN:1	  ASN
+psfgen) Warning: poorly guessed coordinate for atom HY1	 ASN:1	  ASN
+psfgen) Warning: poorly guessed coordinate for atom HY2	 ASN:1	  ASN
+psfgen) Warning: poorly guessed coordinate for atom HY3	 ASN:1	  ASN
+psfgen) Warning: poorly guessed coordinate for atom CY	 ASN:1	  ASN
+psfgen) Warning: poorly guessed coordinate for atom OY	 ASN:1	  ASN
+psfgen) Warning: poorly guessed coordinate for atom NT	 ASN:1	  ASN
+psfgen) Warning: poorly guessed coordinate for atom HT1	 ASN:1	  ASN
+psfgen) Warning: poorly guessed coordinate for atom HT2	 ASN:1	  ASN
+psfgen) Info: writing psf file asn.psf
+psfgen) total of 23 atoms
+psfgen) total of 22 bonds
+psfgen) total of 36 angles
+psfgen) total of 45 dihedrals
+psfgen) total of 10 impropers
+psfgen) total of 0 explicit exclusions
+psfgen) total of 0 cross-terms
+psfgen) Info: psf file complete.
+psfgen) Info: writing pdb file asn.pdb
+psfgen) Info: Atoms with guessed coordinates will have occupancy of 0.0.
+psfgen) Info: pdb file complete.
+ASN:1 
+ASN:1 
+Info) Using plugin psf for structure file asn.psf
+psfplugin) no cross-terms defined in PSF file.
+Info) Analyzing structure ...
+Info)    Atoms: 23
+Info)    Bonds: 22
+Info)    Angles: 36  Dihedrals: 45  Impropers: 10  Cross-terms: 0
+Info)    Bondtypes: 0  Angletypes: 0  Dihedraltypes: 0  Impropertypes: 0
+Info)    Residues: 1
+Info)    Waters: 0
+Info)    Segments: 1
+Info)    Fragments: 1   Protein: 1   Nucleic: 0
+Info) Using plugin pdb for coordinates from file asn.pdb
+Info) Finished with coordinate file asn.pdb.
+0
+Info) VMD for LINUXAMD64, version 1.9.3 (December 1, 2016)
+Info) Exiting normally.
+vmd > 

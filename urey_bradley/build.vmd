@@ -1,0 +1,19 @@
+
+package require psfgen
+ 
+topology top_all36_prot.rtf
+
+segment ASN {
+  first ACE
+  last CT2
+  pdb _asn.pdb
+}
+coordpdb _asn.pdb ASN
+guesscoord
+
+writepsf asn.psf
+writepdb asn.pdb
+
+mol load psf asn.psf pdb asn.pdb
+
+exit

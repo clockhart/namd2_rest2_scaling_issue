@@ -1,0 +1,9 @@
+
+mol new arg.psf waitfor all
+
+set sel [atomselect top "all"]
+set charges [$sel get charge]
+
+puts [vecsum $charges]
+
+exit

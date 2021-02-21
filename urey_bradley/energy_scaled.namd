@@ -1,0 +1,55 @@
+
+
+# input system......
+structure	asn.psf
+coordinates     asn.pdb
+
+#..force field........................
+paratypecharmm	on                       
+parameters      par_all36m_prot.prm
+exclude		scaled1-4                
+1-4scaling	1.0                      
+dielectric      1.0                    
+
+switching	on                  
+switchdist	8.0                 
+cutoff		12.0                
+pairlistdist	13.5                
+margin		0.0                 
+stepspercycle	20                 
+rigidBonds      all                 
+rigidTolerance  0.00001             
+rigidIterations 100
+
+# Ewald EL..........................
+PME             on                 
+PMETolerance    0.000001          
+PMEGridSizeX    64
+PMEGridSizeY    64
+PMEGridSizeZ    64
+
+#integrator ............
+timestep 1.0                             # OK
+fullElectFrequency  4                    # OK
+
+#MD protocol..............
+numsteps        0
+temperature     0
+
+outputname namd-temp
+
+# Solute scaling
+soluteScaling       yes
+soluteScalingAll    yes
+soluteScalingFile   spt.pdb
+soluteScalingCol    B
+soluteScalingFactor 0.5
+
+# periodic boundary conditions......
+cellBasisVector1   64.   0.   0.
+cellBasisVector2    0.  64.   0.
+cellBasisVector3    0.   0.  64.
+cellOrigin          0.   0.   0.
+wrapAll          on
+
+

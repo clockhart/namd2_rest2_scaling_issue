@@ -1,0 +1,97 @@
+* Toplogy and parameter information for water and ions.
+*
+
+read rtf card @app
+* Topology for water and ions
+*
+31  1
+
+MASS  -1  SOD       22.98977 NA ! Sodium Ion
+MASS  -1  CAL       40.08000 CA ! Calcium Ion
+
+RESI SOD       1.00 ! Sodium Ion
+GROUP
+ATOM SOD  SOD  1.00
+PATCHING FIRST NONE LAST NONE
+
+RESI CLA      -1.00 ! Chloride Ion
+GROUP
+ATOM CLA  CLA -1.00
+PATCHING FIRST NONE LAST NONE
+
+END
+
+read para card flex @app
+* Parameters for water and ions
+*
+
+ATOMS
+MASS  -1  SOD       22.98977 ! Sodium Ion
+MASS  -1  CLA       35.45000 ! Chloride Ion
+
+BONDS
+!
+!V(bond) = Kb(b - b0)**2
+!
+!Kb: kcal/mole/A**2
+!b0: A
+!
+!atom type Kb          b0
+!
+
+ANGLES
+!
+!V(angle) = Ktheta(Theta - Theta0)**2
+!
+!V(Urey-Bradley) = Kub(S - S0)**2
+!
+!Ktheta: kcal/mole/rad**2
+!Theta0: degrees
+!Kub: kcal/mole/A**2 (Urey-Bradley)
+!S0: A
+!
+!atom types     Ktheta    Theta0   Kub     S0
+!
+
+DIHEDRALS
+!
+!V(dihedral) = Kchi(1 + cos(n(chi) - delta))
+!
+!Kchi: kcal/mole
+!n: multiplicity
+!delta: degrees
+!
+!atom types             Kchi    n   delta
+!
+
+!
+IMPROPER
+!
+!V(improper) = Kpsi(psi - psi0)**2
+!
+!Kpsi: kcal/mole/rad**2
+!psi0: degrees
+!note that the second column of numbers (0) is ignored
+!
+!atom types           Kpsi                   psi0
+!
+
+NONBONDED nbxmod  5 atom cdiel fshift vatom vdistance vfswitch -
+cutnb 14.0 ctofnb 12.0 ctonnb 10.0 eps 1.0 e14fac 1.0 wmin 1.5
+
+!ions
+SOD      0.0       -0.0469    1.41075  ! new CHARMM Sodium 
+                   ! ddG of -18.6 kcal/mol with K+ from S. Noskov
+CLA      0.0       -0.150      2.27     ! Chloride
+                   ! D. Beglovd and B. Roux, dA=-83.87+4.46 = -79.40 kcal/mol
+
+NBFIX
+!              Emin         Rmin
+!            (kcal/mol)     (A)
+SOD    SOD       0.         5.
+CLA    CLA       0.         5.
+SOD    CLA      -0.083875   3.731 !  From osmotic pressure calibration, J. Phys.Chem.Lett. 1:183-189
+END
+
+END
+

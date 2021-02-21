@@ -1,0 +1,51 @@
+
+# Build system in vacuum
+vmd -dispdev text -e build.vmd &> build.log
+
+# Set scaling to 0.5
+vmd -dispdev text -e spt.vmd &> spt.log
+
+# Run simulations using distributed NAMD2.14 that are scaled and unscaled
+echo "namd2"
+./namd2 energy_unscaled.namd &> energy_unscaled.log
+./namd2 energy_scaled.namd &> energy_scaled.log
+
+# Compare energy
+compare () {
+  title=$1
+  column=$2
+  energy_unscaled=$(grep '^ENERGY' energy_unscaled.log | awk -v i=$column '{print $i}')
+  energy_scaled=$(grep '^ENERGY' energy_scaled.log | awk -v i=$column '{print $i}')
+  ratio=$(echo $energy_unscaled $energy_scaled | awk '{print $2 / $1}')
+  echo $title $ratio
+}
+compare BOND 3
+compare ANGLE 4
+compare DIHED 5
+compare IMPR 6
+compare ELECT 7
+compare VDW 8
+compare POTENTIAL 14
+echo ""
+
+# Run simulations again using the FIXED version of NAMD
+echo "namd2 fixed"
+./namd2_fixed energy_unscaled.namd &> energy_unscaled_fixed.log
+./namd2_fixed energy_scaled.namd &> energy_scaled_fixed.log
+
+# Compare energy
+compare () {
+  title=$1
+  column=$2
+  energy_unscaled=$(grep '^ENERGY' energy_unscaled_fixed.log | awk -v i=$column '{print $i}')
+  energy_scaled=$(grep '^ENERGY' energy_scaled_fixed.log | awk -v i=$column '{print $i}')
+  ratio=$(echo $energy_unscaled $energy_scaled | awk '{print $2 / $1}')
+  echo $title $ratio
+}
+compare BOND 3
+compare ANGLE 4
+compare DIHED 5
+compare IMPR 6
+compare ELECT 7
+compare VDW 8
+compare POTENTIAL 14

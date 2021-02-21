@@ -1,0 +1,21 @@
+
+package require psfgen
+ 
+topology toppar_water_ions.str
+
+segment SOD {
+  pdb _sod.pdb
+}
+coordpdb _sod.pdb SOD
+
+segment CLA {
+  pdb _cla.pdb
+}
+coordpdb _cla.pdb CLA
+
+writepsf ions.psf
+writepdb ions.pdb
+
+mol load psf ions.psf pdb ions.pdb
+
+exit
