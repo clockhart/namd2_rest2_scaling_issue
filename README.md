@@ -19,9 +19,10 @@ parameters A and B when solute scaling is applied instead of the NONBONDED LJ
 parameters.
 
 **Testing:**  
-To demonstrate this issue, I propose two cases. First, asparagine features an
-Urey-Bradley term. Second, a simple system of one sodium and one chloride ion
-can be used to test NBFIX. For simplicity, both systems are studied in vacuo.
+To demonstrate this issue, I propose two cases. First, we can simulate a single
+asparagine residue, since it features an Urey-Bradley term. Second, we can
+simulate one sodium and one chloride ion, which are subjected to NBFIX. For
+simplicity, both systems are studied in vacuo.
 
 In the NAMD user guide and elsewhere in literature, the scaled energy U is,  
 U = beta * U_{1} + sqrt(beta) * U_{01} + U_{0}
