@@ -3,8 +3,7 @@ NAMD’s implementation of REST2 solute scaling (in versions 2.13, 2.14, and the
 master repository) does not apply scaling to Urey-Bradley or NBFIX energy terms,
 in disagreement with the formal REST2 implementation in the NAMD user guide.
 
-Solution: 
-#########
+**Solution:**
 Urey-Bradley can be scaled by altering line 145 of ComputeAngles.C
 (https://charm.cs.illinois.edu/gerrit/plugins/gitiles/namd/+/refs/heads/master/src/ComputeAngles.C#145)
 where “BigReal k_ub = value->k_ub;” becomes “BigReal k_ub = value->k_ub *
@@ -19,9 +18,7 @@ fix in the attached version of LJTable.C. In short, this fix pulls the NBFIX
 parameters A and B when solute scaling is applied instead of the NONBONDED LJ
 parameters.
 
-Testing:
-########
-
+**Testing:**
 To demonstrate this issue, I propose two cases. First, asparagine features an
 Urey-Bradley term. Second, a simple system of one sodium and one chloride ion
 can be used to test NBFIX. For simplicity, both systems are studied in vacuo.
@@ -43,8 +40,10 @@ beta_{obs, vdw} = 0.424655  # for the sodium-chlordie system
 The proposed fix brings beta_{obs, angle} = beta_{obs, vdw} = beta = 0.5 as
 expected.
 
-Additional Remarks:
-###################
-Note that this issue was raised in Feb 2019 by Jeff Comer on the NAMD mailing list (https://www.ks.uiuc.edu/Research/namd/mailing_list/namd-l.2019-2020/0160.html), and it doesn't seem like there was a resolution.
+**Additional Remarks:**
+Note that this issue was raised in Feb 2019 by Jeff Comer on the NAMD mailing
+list
+(https://www.ks.uiuc.edu/Research/namd/mailing_list/namd-l.2019-2020/0160.html),
+and it doesn't seem like there was a resolution.
 
 
